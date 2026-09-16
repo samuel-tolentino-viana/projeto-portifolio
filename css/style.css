@@ -315,6 +315,19 @@ main #projetos .conteudo button {
   cursor: pointer;
 }
 
+main #projetos .link-meus-proj {
+  text-decoration: none;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: var(--destaque);
+  color: var(--texto);
+  text-align: center;
+  padding: var(--medida-grande);
+}
+
 /* RESPONSIVIDADE */
 
 @media(min-width: 1000px) {
