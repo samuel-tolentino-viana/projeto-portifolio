@@ -317,6 +317,7 @@ main #projetos .conteudo button {
 
 main #projetos .link-meus-proj {
   text-decoration: none;
+  color: var(--texto);
 }
 
 /* FOOTER */
