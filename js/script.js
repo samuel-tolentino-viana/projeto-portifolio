@@ -1,6 +1,6 @@
 const naofunciona = document.querySelectorAll('.desativado');
 const botoesProjetos = document.querySelectorAll('.mostrar-informacoes');
-const trocarTema = document.querySelector('.trocar-tema');
+const trocarTema = document.querySelector('#trocar-tema');
 
 // BOTÕES DESATIVADOS DO PERFIL
 
@@ -40,4 +40,30 @@ trocarTema.addEventListener('click', (e) => {
         corpo.classList.remove('modo-escuro');
         trocarTema.innerHTML = '<i class="fa-solid fa-moon"></i>';
     };
+});
+
+// ROLAGEM
+
+const navLinks = document.querySelectorAll('header .menu .links');
+
+navLinks.forEach((links) => { // FOREACH PERCORRE TODOS OS LINKS COM O PARÂMETRO
+
+    links.addEventListener('click', (e) => { // O e PERMITE ACESSAR VARIAS INFORMAÇÕES SOBRE OQUE ACONTEUCEU
+
+        e.preventDefault(); // PREVINE QUE O LINK QUE FOI CLICADO 
+        
+        const atributo = document.querySelector(links.getAttribute('href')); // PEGA O LINK QUE FOI CLICADO E VERIFICA SE NELE HÁ O ATRIBUTO: href
+
+        if(atributo) {
+
+            const alturaDoHeader = document.querySelector('header').offsetHeight; // offsetHeight PEGA A ALTURA DO ELEMENTO HTML
+
+            const posicaoDoHeader = atributo.offsetTop - alturaDoHeader - 18; // CALCULA A ALTURA PARA SE POSICIONAR
+
+            window.scrollTo({ // A TELA VAI ROLAR E DEIXAR A PARTE DE CIMA COM OQUE FOI CALCULADO E VAI ROLAR SUAVEMENTE
+                top: posicaoDoHeader,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
